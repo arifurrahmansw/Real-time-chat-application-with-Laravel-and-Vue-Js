@@ -12,7 +12,7 @@
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/frontend-main.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ time() }}">
     @stack('custom_css')
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 </head>
@@ -66,9 +66,7 @@
                                         </form>
                                     </li>
                                 </ul>
-
                             </div>
-
                             @else
                             <li class="nav-item">
                                 <a class="btn loginBtn me-2" href="{{route('login')}}">Log In</a>
@@ -84,12 +82,8 @@
         </div>
     </div>
 </header>
-<!-- ============================ Header end ============================  -->
-
-
         @yield('content')
     </div>
-    <!-- js file -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/tilt.jquery.min.js') }}"></script>
     @stack('custom_js')

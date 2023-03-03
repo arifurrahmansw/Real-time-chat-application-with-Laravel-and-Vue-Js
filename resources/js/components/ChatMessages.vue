@@ -33,7 +33,7 @@
 <script>
 import moment from 'moment';
 export default {
-  props: ["messages","user",'auth','user_game_id'],
+  props: ["messages","user",'auth'],
   data(){
         return {
             formattedTime : '',

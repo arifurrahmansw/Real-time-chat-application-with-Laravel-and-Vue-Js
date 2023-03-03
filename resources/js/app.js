@@ -1,9 +1,3 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 const { default: Echo } = require('laravel-echo');
 
 require('./bootstrap');
@@ -37,18 +31,15 @@ const app = new Vue({
         from_user:'',
         to_user:'',
         auth_id:'',
-        user_game_id:''
     },
 
     created() {
         this.getMessages();
         this.getUser();
         let url = window.location.pathname.split('/');
-        let user_game_id = url[3];
-        this.user_game_id = user_game_id;
         window.Echo.private('chat')
             .listen('MessageSent', (e) => {
-                if(e.for_user_id==this.auth_id && e.message.user_game_id==this.user_game_id){
+                if(e.for_user_id==this.auth_id){
                     this.messages.push({
                         message: e.message.message,
                         user: e.user
@@ -59,12 +50,8 @@ const app = new Vue({
 
     methods: {
         getMessages() {
-                let url = window.location.pathname.split('/');
-                let user_game_id = url[3];
-                this.user_game_id = user_game_id;
             axios.get('/get-message', {
                 params: {
-                    user_game_id: this.user_game_id,
                   }
               }).then(response => {
                 this.messages = response.data.messages;

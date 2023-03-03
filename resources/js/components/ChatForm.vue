@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  props: ["user",'to_user','user_game_id'],
+  props: ["user",'to_user'],
 
   data() {
     return {
@@ -40,7 +40,6 @@ export default {
       this.$emit("messagesent", {
         user: this.user,
         to_user: this.to_user,
-        user_game_id: this.user_game_id,
         message: this.newMessage,
       });
       this.scrollToTop();
