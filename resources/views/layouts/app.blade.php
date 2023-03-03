@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/frontend-main.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/frontend-responsive.css') }}?v={{ time() }}">
     @stack('custom_css')
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 </head>
