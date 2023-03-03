@@ -46,18 +46,14 @@
                                     data-bs-display="static" aria-expanded="false">
                                     <img src="{{asset($row->image ?? 'assets/images/default-user.png') }}"
                                                             class="rounded-circle" width="50" height="50" alt="user">
-                                
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
-
                                     <li>
                                         <a class="dropdown-item" href="">
                                             <img src="{{ asset('assets/images/icon/user.svg') }}" alt="Profile">
                                             Profile
                                         </a>
                                     </li>
-                                   
-                             
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"
@@ -76,12 +72,10 @@
 
                             @else
                             <li class="nav-item">
-                                <a class="btn loginBtn me-2" href="javascript:void(0)" data-bs-toggle="modal"
-                                    data-bs-target="#loginModal">Log In</a>
+                                <a class="btn loginBtn me-2" href="{{route('login')}}">Log In</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn singupBtn" href="javascript:void(0)" data-bs-toggle="modal"
-                                    data-bs-target="#singupModal">Sign Up</a>
+                                <a class="btn singupBtn" href="{{route('register')}}">Sign Up</a>
                             </li>
                             @endauth
                         </ul>
