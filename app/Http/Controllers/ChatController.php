@@ -61,9 +61,9 @@ class ChatController extends Controller
         $to_user = User::findOrFail($request->to_user['id']);
         $message = new Message();
         $message->user_id = Auth::user()->id;
-        $message->from_user_name = Auth::user()->username;
+        $message->from_user_name = Auth::user()->name;
         $message->to_user = $to_user->id;
-        $message->to_user_name = $to_user->username;
+        $message->to_user_name = $to_user->name;
         $message->message = htmlentities(trim($request->message), ENT_QUOTES, 'UTF-8');
         $message->message_id = mt_rand(9, 999) + time();
         $message->created_at = date('Y-m-d H:i:s');

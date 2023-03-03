@@ -4,7 +4,7 @@
         <div v-for="message in messages" :key="message.id">
             <div class="direct-chat-msg right" v-if="message.user_id==auth.id">
             <div class="direct-chat-infos clearfix">
-                <span class="direct-chat-name float-end">{{message.user.username }}</span>
+                <span class="direct-chat-name float-end">{{message.user.name }}</span>
                 <span class="direct-chat-timestamp float-start">{{ message.created_at ? getFormattedTime(message.created_at):'1 second' }} ago</span>
             </div>
             <img class="direct-chat-img" v-bind:src="getImgUrl(message.user.image)" width="50" alt="">
@@ -16,7 +16,7 @@
         </div>
         <div v-else class="direct-chat-msg">
             <div class="direct-chat-infos clearfix">
-                <span class="direct-chat-name float-start">{{ message.user.username }}</span>
+                <span class="direct-chat-name float-start">{{ message.user.name }}</span>
                 <span class="direct-chat-timestamp float-end">{{ message.created_at ? getFormattedTime(message.created_at):'1 second' }} ago</span>
             </div>
             <img class="direct-chat-img" v-bind:src="getImgUrl(message.user.image)" width="50" alt="">
